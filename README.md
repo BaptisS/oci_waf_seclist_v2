@@ -78,8 +78,8 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 #!/bin/bash
 rm -f wafrule-TCP80443.sh
 rm -f wafrule-TCP443.sh
-wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP80443.sh
-wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP443.sh
+wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP80443.sh
+wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP443.sh
 chmod +x wafrule-TCP80443.sh
 chmod +x wafrule-TCP443.sh
 
@@ -121,7 +121,7 @@ rm -f seclist-waf-TCP443.json
 ```
 #!/bin/bash
 rm -f wafrule-TCP443.sh
-wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP443.sh
+wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP443.sh
 chmod +x wafrule-TCP443.sh
 
 wafips=$(oci waas edge-subnet list --all)
