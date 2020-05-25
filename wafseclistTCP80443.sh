@@ -1,8 +1,8 @@
 #!/bin/bash
 rm -f wafrule-TCP80.sh
 rm -f wafrule-TCP443.sh
-wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP80.sh
-wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP443.sh
+wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP80.sh
+wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP443.sh
 chmod +x wafrule-TCP80.sh
 chmod +x wafrule-TCP443.sh
 
