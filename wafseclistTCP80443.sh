@@ -22,8 +22,8 @@ echo "]" >> seclist-waf-TCP80443-temp.json
 sed -i 's+66.254.103.241+66.254.103.241/32+g' seclist-waf-TCP80443-temp.json                                            
 sed -zr 's/,([^,]*$)/\1/' seclist-waf-TCP80443-temp.json > seclist-waf-TCP80443.json
 rm -f seclist-waf-TCP80443-temp.json
-oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://seclist-waf-TCP80443.json --force
-
+wafseclistimp=$(oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://seclist-waf-TCP80443.json --force)
+echo $wafseclistimp
 
 rm -f wafrule-TCP80.sh
 rm -f wafrule-TCP443.sh
