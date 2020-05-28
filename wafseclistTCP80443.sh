@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /home/opc
 rm -f wafrule-TCP80.sh
 rm -f wafrule-TCP443.sh
 wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP80.sh
@@ -23,7 +22,7 @@ echo "]" >> seclist-waf-TCP80443-temp.json
 sed -i 's+66.254.103.241+66.254.103.241/32+g' seclist-waf-TCP80443-temp.json                                            
 sed -zr 's/,([^,]*$)/\1/' seclist-waf-TCP80443-temp.json > seclist-waf-TCP80443.json
 rm -f seclist-waf-TCP80443-temp.json
-oci network security-list update --security-list-id $wafseclist --ingress-security-rules --from-json file://seclist-waf-TCP80443.json --force
+oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://seclist-waf-TCP80443.json --force
 
 rm -f wafrule-TCP80.sh
 rm -f wafrule-TCP443.sh
