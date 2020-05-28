@@ -2,23 +2,26 @@
 _An easy way to lockdown your OCI WAF Origin_ 
 
 
-When using a Web Application Firewall, it is important to apply a set of security rules around your Web Application to block all requests, which are not passing through the WAF service.
+After configuring OCI Web Application Firewall policy, it's crucial to apply a set of security rules around your Web Application in order to block requests not passing through the WAF service.
 
-OCI WAF stand in front of your web application to detect and block unwanted/malicious access. . In most cases, your Web Application itself sits behind a Load Balancer. Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer or Web Application subnet by using a Security List, or alternatively you may prefer to assign the security rules to your Load Balancer or Web Application Network Interfaces by using a Network Security Group.
+OCI WAF stands in front of your web application to detect and block unwanted/malicious requests. In most cases, your Web Application itself sits behind a Load Balancer. (End-users --> OCI WAF --> OCI LBaaS --> WEBApp) 
+
+In OCI, all network communication are blocked by default unless you have security rule assigned to proper subnet and/or Vnic. 
+
+Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer's subnet by using a Security List, or alternatively you may prefer to assign the security rules to your Load Balancer Network Interfaces by using Network Security Group.
 
 This document will guide you through the steps needed to create and assign a ***Security List*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. If you want to use _Network Security Groups_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_nsg
 
 
 
-
-> ***Important Note:*** 
-> If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
+> ***Note:*** 
+> If you are not using a Load Balancer in front of your Web Application (End-users --> OCI WAF --> WebApp), Security rules (Security List / Network Security Group) must be applied directly to your Web Application subnet (if using Security Lists) or Network Interfaces (if using network Security Groups).
 
 
 ***Prerequisites:***
 
-- An OCI user account with enough permissions to create and assign Security Lists in the desired Compartment / VCN. 
-- At least one Virtual Cloud Network and one Subnet already created. 
+- OCI user account with enough permissions. (Create and assign Security Lists / NSG) in desired Compartment & VCN. 
+- Virtual Cloud Network (VCN) and one Subnet already created. 
  
  
  
