@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/opc
 rm -f wafrule-TCP80.sh
 rm -f wafrule-TCP443.sh
 wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist_v2/master/wafrule-TCP80.sh
