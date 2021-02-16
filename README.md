@@ -10,7 +10,7 @@ In OCI, all network communication are blocked by default unless you have securit
 
 Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer's subnet by using a Security List, or alternatively you may prefer to assign the security rules to your Load Balancer Network Interfaces by using Network Security Group.
 
-This document will guide you through the steps needed to create and assign a ***Security List*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. If you want to use _Network Security Groups_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_nsg
+This document will guide you through the steps needed to create and assign a ***Security List*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. If you want to use _Network Security Groups_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_nsg_v2
 
 
 
